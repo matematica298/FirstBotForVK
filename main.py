@@ -30,7 +30,7 @@ dz = ''
 @bot.on.message(text="Записать <text>")
 async def hi_handler(message: Message, text: str):
     global dz
-    dz = dz + text
+    dz = dz + "\n" + text
     await message.answer(f"Вы записали {text!r}")
 
 @bot.on.message(text="Дз на завтра")
