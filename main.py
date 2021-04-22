@@ -33,6 +33,13 @@ async def hi_handler(message: Message, text: str):
     dz = text
     await message.answer(f"Вы записали {text!r}")
 
+@bot.on.message(text="Добавить в дз <text>")
+async def hi_handler(message: Message, new_slovo: str):
+global dz
+dz = dz + new_slovo
+await message.answer(f"Вы записали {new_slovo!r}")
+
+
 
 @bot.on.message(text="Дз на завтра")
 async def hi_handler(message: Message):
