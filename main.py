@@ -24,14 +24,20 @@ async def hi_handler(message: Message):
     await message.answer("Привет", keyboard=KEYBOARD.get_json())
 
 
+dz = ''
+
+
 @bot.on.message(text="Записать <text>")
 async def hi_handler(message: Message, text: str):
+    global dz
+    dz = text
     await message.answer(f"Вы записали {text!r}")
 
 
 @bot.on.message(text="Дз на завтра")
-async def hi_handler(message: Message, text: str):
-    await message.answer(f" {text!r}")
+async def hi_handler(message: Message):
+    global dz
+    await message.answer(dz)
 
 
 bot.run_forever()
