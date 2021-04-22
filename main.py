@@ -38,11 +38,6 @@ async def hi_handler(message: Message):
     global dz
     await message.answer(dz)
 
-@bot.on.message(text="Очистить дз")
-async def hi_handler(message: Message):
-global dz
-dz = ''
-await message.answer(f"Вы Очистили дз")
 
 
 bot.run_forever()
