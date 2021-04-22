@@ -12,7 +12,7 @@ async def hi_handler(message: Message):
 
     # Создаем клавишу
     BUTTON = Text("Записать")
-    BUTTON1 = Text("Съесть еще")
+    BUTTON1 = Text("Помощь")
 
     # Добавляем клавишу в клавиатуру
     KEYBOARD.add(BUTTON)
@@ -32,6 +32,21 @@ async def hi_handler(message: Message, text: str):
     global dz
     dz = dz + "\n" + text
     await message.answer(f"Вы записали {text!r}")
+
+@bot.on.message(text="Помощь")
+async def hi_handler(message: Message, text: str):
+    # Создаем клавиатуру
+    KEYBOARD = Keyboard(one_time=True)
+
+    # Создаем клавишу
+    BUTTON = Text("Записать")
+    BUTTON1 = Text("Помощь")
+
+    # Добавляем клавишу в клавиатуру
+    KEYBOARD.add(BUTTON)
+    KEYBOARD.add(BUTTON1)
+
+    await message.answer(f"Привет. Вот тебе полное объяснение команд:" + "\n" + "'Записать' используется для того, чтобы записать дз на завтра," + "которое ты знаешь. К примеру")
 
 @bot.on.message(text="Дз на завтра")
 async def hi_handler(message: Message):
