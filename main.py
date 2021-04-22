@@ -34,7 +34,7 @@ async def hi_handler(message: Message, text: str):
     await message.answer(f"Вы записали {text!r}")
 
 @bot.on.message(text="Помощь")
-async def hi_handler(message: Message, text: str):
+async def hi_handler(message: Message):
     # Создаем клавиатуру
     KEYBOARD = Keyboard(one_time=True)
 
@@ -49,7 +49,8 @@ async def hi_handler(message: Message, text: str):
     await message.answer(f"Привет. Вот тебе полное объяснение команд:")
     await message.answer("'Записать' используется для того, чтобы записать дз на завтра,"+"которое ты знаешь.")
     await message.answer("К примеру ты хочешь записать 'Физика п.58 читать и Дидактика стр 15 #3'")
-    await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'",  keyboard=KEYBOARD.get_json())
+    await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'")
+    await message.answer(keyboard=KEYBOARD.get_json())
 
 @bot.on.message(text="Дз на завтра")
 async def hi_handler(message: Message):
