@@ -46,7 +46,10 @@ async def hi_handler(message: Message, text: str):
     KEYBOARD.add(BUTTON)
     KEYBOARD.add(BUTTON1)
 
-    await message.answer(f"Привет. Вот тебе полное объяснение команд:" + "\n" + "'Записать' используется для того, чтобы записать дз на завтра," + "которое ты знаешь. К примеру")
+    await message.answer(f"Привет. Вот тебе полное объяснение команд:")
+    await message.answer("'Записать' используется для того, чтобы записать дз на завтра,"+"которое ты знаешь.")
+    await message.answer("К примеру ты хочешь записать 'Физика п.58 читать и Дидактика стр 15 #3'")
+    await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'",  keyboard=KEYBOARD.get_json())
 
 @bot.on.message(text="Дз на завтра")
 async def hi_handler(message: Message):
