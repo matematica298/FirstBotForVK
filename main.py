@@ -32,7 +32,7 @@ dz = ''
 async def hi_handler(message: Message, text: str):
     global dz
     users_info = await bot.api.users.get(message.from_id)
-    dz = dz + "\n" + text + (" Это оставил: {}".format(users_info[0].first_name))
+    dz = dz + "\n" + text + (" Это оставил: {}".format(users_info[0].first_name)) + ("{}".format(users_info[0].last_name))
     await message.answer(f"Вы записали {text!r}")
 
 #@bot.on.chat_message(text="Помощь")
@@ -89,9 +89,9 @@ async def hi_handler(message: Message):
     dz = ''
     await message.answer(f"Вы Очистили дз")
 
-@bot.on.private_message(text="Соси")
-async def hi_handler(message: Message):
-    users_info = await bot.api.users.get(message.from_id)
-    await message.answer("Соси {}".format(users_info[0].first_name))
+#@bot.on.private_message(text="Соси")
+#async def hi_handler(message: Message):
+    #users_info = await bot.api.users.get(message.from_id)
+    #await message.answer("Соси {}".format(users_info[0].first_name))
 
 bot.run_forever()
