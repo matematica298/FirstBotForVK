@@ -1,6 +1,5 @@
 from vkbottle import Keyboard, Text
 from vkbottle.bot import Bot, Message
-import vk_api
 
 bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb3d9df4915f2bcc1c4fd341")
 bot.labeler.vbml_ignore_case = True
@@ -9,20 +8,20 @@ bot.labeler.vbml_ignore_case = True
 @bot.on.chat_message(text=["привет", 'ку'])
 async def hi_handler(message: Message):
     # Создаем клавиатуру
-   # KEYBOARD = Keyboard(one_time=True)
+    KEYBOARD = Keyboard(one_time=True)
 
     # Создаем клавишу
-    #BUTTON = Text("Записать")
-    #BUTTON1 = Text("Помощь")
-    #BUTTON2 = Text("Правила")
+    BUTTON = Text("Записать")
+    BUTTON1 = Text("Помощь")
+    BUTTON2 = Text("Правила")
 
     # Добавляем клавишу в клавиатуру
-    #KEYBOARD.add(BUTTON)
-    #KEYBOARD.add(BUTTON1)
-    #KEYBOARD.add(BUTTON2)
+    KEYBOARD.add(BUTTON)
+    KEYBOARD.add(BUTTON1)
+    KEYBOARD.add(BUTTON2)
 
     # Перенос на новую строчку
-    # KEYBOARD.row()
+    KEYBOARD.row()
 
     await message.answer("Привет")
     #await message.answer("Привет", keyboard=KEYBOARD.get_json())
