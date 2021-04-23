@@ -89,7 +89,7 @@ async def hi_handler(message: Message):
     dz = ''
     await message.answer(f"Вы Очистили дз")
 
-@bot.on.message(text="Соси")
+@bot.on.private_message(text="Соси")
 async def hi_handler(message: Message):
     users_info = await bot.api.users.get(message.from_id)
     await message.answer("Соси {}".format(users_info[0].first_name))
