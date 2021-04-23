@@ -13,10 +13,12 @@ async def hi_handler(message: Message):
     # Создаем клавишу
     BUTTON = Text("Записать")
     BUTTON1 = Text("Помощь")
+    BUTTON2 = Text("Правила")
 
     # Добавляем клавишу в клавиатуру
     KEYBOARD.add(BUTTON)
     KEYBOARD.add(BUTTON1)
+    KEYBOARD.add(BUTTON2)
 
     # Перенос на новую строчку
     # KEYBOARD.row()
@@ -30,7 +32,7 @@ async def hi_handler(message: Message, text: str):
     dz = dz + "\n" + text
     await message.answer(f"Вы записали {text!r}")
 
-@bot.on.message(text="Помощь")
+@bot.on.message(text="Помощь", text="@club181612389 Правила")
 async def hi_handler(message: Message):
     # Создаем клавиатуру
     KEYBOARD1 = Keyboard(one_time=True)
@@ -51,7 +53,7 @@ async def hi_handler(message: Message):
     await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'")
     await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD1.get_json())
 
-@bot.on.message(text="Правила")
+@bot.on.message(text="Правила", text="@club181612389 Правила")
 async def hi_handler(message: Message):
     # Создаем клавиатуру
     KEYBOARD1 = Keyboard(one_time=True)
@@ -72,7 +74,7 @@ async def hi_handler(message: Message):
     await message.answer("3. Если вы имеете хоть какое-то ВЕРНОЕ дз, тогда нажмите помощь и добавьте его")
     await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD1.get_json())
 
-@bot.on.message(text="Дз на завтра")
+@bot.on.message(text="Дз на завтра",text="@club181612389 Дз на завтра")
 async def hi_handler(message: Message):
     global dz
     await message.answer(dz)
