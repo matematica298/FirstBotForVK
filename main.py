@@ -82,11 +82,6 @@ async def hi_handler(message: Message):
     global dz
     await message.answer(dz)
 
-@bot.on.chat_message(text="Рандом")
-async def hi_handler(message: Message, x):
-    x = np.random.random((1, 1000000))
-    await message.answer(x)
-
 @bot.on.chat_message(text="Очистить дз")
 async def hi_handler(message: Message):
     global dz
