@@ -31,7 +31,8 @@ dz = ''
 @bot.on.chat_message(text="Записать <text>")
 async def hi_handler(message: Message, text: str):
     global dz
-    dz = dz + "\n" + text
+    users_info = await bot.api.users.get(message.from_id)
+    dz = dz + "\n" + text + ("Привет, {}".format(users_info[0].first_name))
     await message.answer(f"Вы записали {text!r}")
 
 #@bot.on.chat_message(text="Помощь")
