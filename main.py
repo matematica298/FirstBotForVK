@@ -27,6 +27,7 @@ async def hi_handler(message: Message):
     #await message.answer("Привет", keyboard=KEYBOARD.get_json())
 
 dz = ''
+
 @bot.on.chat_message(text="Записать <text>")
 async def hi_handler(message: Message, text: str):
     global dz
@@ -86,17 +87,5 @@ async def hi_handler(message: Message):
     global dz
     dz = ''
     await message.answer(f"Вы Очистили дз")
-
-@bot.on.message(text="Очистить дз")
-async def hi_handler(message: Message):
-    global dz
-    dz = ''
-    await message.answer(f"Вы Очистили дз")
-
-@bot.on.message(text="Дз на завтра")
-async def hi_handler(message: Message):
-    global dz
-    await message.answer(dz)
-
 
 bot.run_forever()
