@@ -1,5 +1,6 @@
 from vkbottle import Keyboard, Text
 from vkbottle.bot import Bot, Message
+import numpy as np
 
 bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb3d9df4915f2bcc1c4fd341")
 bot.labeler.vbml_ignore_case = True
@@ -81,9 +82,10 @@ async def hi_handler(message: Message):
     global dz
     await message.answer(dz)
 
-@bot.on.chat_message(text="Билол бот?")
-async def hi_handler(message: Message):
-    await message.answer("Да")
+@bot.on.chat_message(text="Рандом")
+async def hi_handler(message: Message, x):
+    x = np.random.random((1, 1000000))
+    await message.answer(x)
 
 @bot.on.chat_message(text="Очистить дз")
 async def hi_handler(message: Message):
