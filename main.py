@@ -33,8 +33,8 @@ async def hi_handler(message: Message, text: str):
     dz = dz + "\n" + text
     await message.answer(f"Вы записали {text!r}")
 
-@bot.on.chat_message(text="Помощь")
-async def hi_handler(message: Message):
+#@bot.on.chat_message(text="Помощь")
+#async def hi_handler(message: Message):
     # Создаем клавиатуру
    # KEYBOARD1 = Keyboard(one_time=True)
 
@@ -48,10 +48,10 @@ async def hi_handler(message: Message):
     #KEYBOARD1.add(BUTTON1)
    # KEYBOARD1.add(BUTTON2)
 
-    await message.answer(f"Привет. Вот тебе полное объяснение команд:")
-    await message.answer("1)'Записать' используется для того, чтобы записать дз на завтра,"+"которое ты знаешь.")
-    await message.answer("К примеру ты хочешь записать 'Физика п.58 читать и Дидактика стр 15 #3'")
-    await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'")
+  #  await message.answer(f"Привет. Вот тебе полное объяснение команд:")
+  #  await message.answer("1)'Записать' используется для того, чтобы записать дз на завтра,"+"которое ты знаешь.")
+   # await message.answer("К примеру ты хочешь записать 'Физика п.58 читать и Дидактика стр 15 #3'")
+  # await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'")
    # await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD1.get_json())
 
 
@@ -80,6 +80,10 @@ async def hi_handler(message: Message):
 async def hi_handler(message: Message):
     global dz
     await message.answer(dz)
+
+@bot.on.chat_message(text="Билол бот?")
+async def hi_handler(message: Message):
+    await message.answer("Да")
 
 @bot.on.chat_message(text="Очистить дз")
 async def hi_handler(message: Message):
