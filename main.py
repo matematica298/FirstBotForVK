@@ -1,5 +1,6 @@
-from vkbottle.bot import Bot, Message
 from vkbottle import Keyboard, Text
+from vkbottle.bot import Bot, Message
+import time
 
 bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb3d9df4915f2bcc1c4fd341")
 bot.labeler.vbml_ignore_case = True
@@ -50,7 +51,7 @@ async def hi_handler(message: Message):
     await message.answer("1)'Записать' используется для того, чтобы записать дз на завтра,"+"которое ты знаешь.")
     await message.answer("К примеру ты хочешь записать 'Физика п.58 читать и Дидактика стр 15 #3'")
     await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'")
-    await message.answer("", keyboard=KEYBOARD1.get_json())
+    await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD1.get_json())
 
 @bot.on.message(text="Дз на завтра")
 async def hi_handler(message: Message):
