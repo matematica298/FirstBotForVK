@@ -5,7 +5,7 @@ bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb
 bot.labeler.vbml_ignore_case = True
 
 
-@bot.on.chat_message(text=["привет", 'ку'])
+@bot.on.message(text=["привет", 'ку'])
 async def hi_handler(message: Message):
     # Создаем клавиатуру
     KEYBOARD = Keyboard(one_time=True)
@@ -28,7 +28,7 @@ async def hi_handler(message: Message):
 
 dz = ''
 
-@bot.on.chat_message(text="Записать <text>")
+@bot.on.message(text="Записать <text>")
 async def hi_handler(message: Message, text: str):
     global dz
     users_info = await bot.api.users.get(message.from_id)
@@ -57,7 +57,7 @@ async def hi_handler(message: Message, text: str):
    # await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD1.get_json())
 
 
-@bot.on.chat_message(text="Правила")
+@bot.on.message(text="Правила")
 async def hi_handler(message: Message):
     # Создаем клавиатуру
    # KEYBOARD1 = Keyboard(one_time=True)
@@ -78,18 +78,18 @@ async def hi_handler(message: Message):
     await message.answer("3. Если вы имеете хоть какое-то ВЕРНОЕ дз, тогда нажмите помощь и добавьте его")
    # await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD1.get_json())
 
-@bot.on.chat_message(text="Дз на завтра")
+@bot.on.message(text="Дз на завтра")
 async def hi_handler(message: Message):
     global dz
     await message.answer(dz)
 
-@bot.on.chat_message(text="Очистить дз")
+@bot.on.message(text="Очистить дз")
 async def hi_handler(message: Message):
     global dz
     dz = ''
     await message.answer(f"Вы Очистили дз")
 
-@bot.on.chat_message(text=["Ты бот",'ботяра'])
+@bot.on.message(text=["Ты бот",'ботяра'])
 async def hi_handler(message: Message):
     await message.answer('Ты бот')
 
