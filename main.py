@@ -89,6 +89,10 @@ async def hi_handler(message: Message):
     dz = ''
     await message.answer(f"Вы Очистили дз")
 
+@bot.on.chat_message(text=["Ты бот",'ботяра'])
+async def hi_handler(message: Message):
+    await message.answer('Ты бот')
+
 #@bot.on.private_message(text="Соси")
 #async def hi_handler(message: Message):
     #users_info = await bot.api.users.get(message.from_id)
