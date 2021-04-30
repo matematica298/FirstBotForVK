@@ -24,7 +24,7 @@ async def hi_handler(message: Message):
     KEYBOARD.row()
 
     await message.answer("Привет")
-    #await message.answer("Привет", keyboard=KEYBOARD.get_json())
+    await message.answer("Привет", keyboard=KEYBOARD.get_json())
 
 dz = ''
 
