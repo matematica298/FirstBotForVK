@@ -5,7 +5,7 @@ bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb
 bot.labeler.vbml_ignore_case = True
 
 
-@bot.on.message(text=["привет", 'ку'])
+@bot.on.message(text="привет")
 async def hi_handler(message: Message):
     # Создаем клавиатуру
      KEYBOARD = Keyboard(one_time=True)
@@ -22,13 +22,10 @@ async def hi_handler(message: Message):
 
     # Перенос на новую строчку
      KEYBOARD.row()
+    # Получаем JSON-развертку клавиатуры
+     KEYBOARD = KEYBOARD.get_json()
 
-     # Получаем JSON-развертку клавиатуры
-
-    KEYBOARD = KEYBOARD.get_json()
-
-    #await message.answer("Привет")
-    await message.answer("Привет", keyboard=KEYBOARD.get_json())
+     await message.answer("Привет", keyboard=KEYBOARD.get_json())
 
 dz = ''
 
