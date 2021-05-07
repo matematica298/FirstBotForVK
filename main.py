@@ -20,8 +20,6 @@ async def hi_handler(message: Message):
      KEYBOARD.add(BUTTON1)
      KEYBOARD.add(BUTTON2)
 
-    # Перенос на новую строчку
-     KEYBOARD.row()
     # Получаем JSON-развертку клавиатуры
      KEYBOARD = KEYBOARD.get_json()
 
