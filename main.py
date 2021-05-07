@@ -8,25 +8,25 @@ bot.labeler.vbml_ignore_case = True
 @bot.on.message(text=["привет", 'ку'])
 async def hi_handler(message: Message):
     # Создаем клавиатуру
-    # KEYBOARD = Keyboard(one_time=True)
+     KEYBOARD = Keyboard(one_time=True)
 
     # Создаем клавишу
-    # BUTTON = Text("Записать")
-    # BUTTON1 = Text("Помощь")
-    # BUTTON2 = Text("Правила")
+     BUTTON = Text("Записать")
+     BUTTON1 = Text("Помощь")
+     BUTTON2 = Text("Правила")
 
     # Добавляем клавишу в клавиатуру
-    # KEYBOARD.add(BUTTON)
-    # KEYBOARD.add(BUTTON1)
-    # KEYBOARD.add(BUTTON2)
+     KEYBOARD.add(BUTTON)
+     KEYBOARD.add(BUTTON1)
+     KEYBOARD.add(BUTTON2)
 
     # Перенос на новую строчку
-    # KEYBOARD.row()
+     KEYBOARD.row()
 
     await message.answer("Привет")
 
 
-# await message.answer("Привет", keyboard=KEYBOARD.get_json())
+  await message.answer("Привет", keyboard=KEYBOARD.get_json())
 
 dz = ''
 
@@ -41,28 +41,25 @@ async def hi_handler(message: Message, text: str):
 
 
 @bot.on.chat_message(text="Помощь")
-async def hi_handler(message: Message):
+async def hi_handler(message: Message,):
     # Создаем клавиатуру
-   # KEYBOARD = Keyboard(one_time=True)
+    KEYBOARD = Keyboard(one_time=True)
 
     # Создаем клавишу
-   # BUTTON = Text("Записать")
-   # BUTTON1 = Text("Помощь")
-   # BUTTON2 = Text("Правила")
+    BUTTON = Text("Записать")
+    BUTTON1 = Text("Помощь")
+    BUTTON2 = Text("Правила")
 
     # Добавляем клавишу в клавиатуру
-   # KEYBOARD.add(BUTTON)
-    #KEYBOARD.add(BUTTON1)
-   #KEYBOARD.add(BUTTON2)
-
-    # Получаем JSON-развертку клавиатуры
-   # KEYBOARD = KEYBOARD.get_json()
+    KEYBOARD.add(BUTTON)
+    KEYBOARD.add(BUTTON1)
+    KEYBOARD.add(BUTTON2)
 
     await message.answer(f"Привет. Вот тебе полное объяснение команд:")
     await message.answer("1)'Записать' используется для того, чтобы записать дз на завтра," + "которое ты знаешь.")
     await message.answer("К примеру ты хочешь записать 'Физика п.58 читать и Дидактика стр 15 #3'")
     await message.answer("Пишешь это как 'Записать Физика п.58 читать и Дидактика стр 15 #3'")
-   # await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD.get_json())
+    await message.answer("Вот тебе клавиатура...", keyboard=KEYBOARD.get_json())
 
 
 @bot.on.message(text="Правила")
@@ -119,10 +116,14 @@ async def hi_handler(message: Message):
 
 @bot.on.message(text="Опрос")
 async def hi_handler(message: Message):
-    await message.answer(f"Привет. Если хочешь пройти опрос, напиши 'Да',если не хочешь 'Нет'")
-    b = int(input())
-    if b == 'Да':
-        await message.answer(f'Сначала заполни анкету:')
-    else:
-        await message.answer(f'Ты не захотел участвовать')
+    await message.answer(f"Привет. Если хочешь пройти опрос, напиши 'Опрос Да',если не хочешь 'Опрос Нет'")
+
+@bot.on.message(text="Опрос Да")
+async def hi_handler(message: Message):
+    await message.answer(f"Привет,'")
+
+
+@bot.on.message(text="Рандом фото Алёны")
+async def hi_handler(message: Message):
+    await message.answer(f"")
 bot.run_forever()
