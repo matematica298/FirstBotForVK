@@ -25,7 +25,7 @@ async def hi_handler(message: Message):
     # Получаем JSON-развертку клавиатуры
      KEYBOARD = KEYBOARD.get_json()
 
-     await message.answer("Привет", keyboard=KEYBOARD.get_json())
+     await message.answer("Привет", keyboard=KEYBOARD)
 
 dz = ''
 
