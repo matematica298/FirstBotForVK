@@ -116,7 +116,7 @@ async def hi_handler(message: Message):
 
 @bot.on.message(text="Рандом фото Алёны ")
 async def hi_handler(message: Message,):
-    await message.answer(f"")
+    await message.answer(f"f")
 
 
 bot.run_forever()
