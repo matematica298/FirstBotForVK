@@ -5,7 +5,7 @@ bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb
 bot.labeler.vbml_ignore_case = True
 
 
-# git add *
+# git add * ddd
 # git commit -m "Somethind edited"
 # git push -u origin main
 @bot.on.message(text="привет")
