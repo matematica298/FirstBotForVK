@@ -1,6 +1,6 @@
 from vkbottle import Keyboard, Text
 from vkbottle.bot import Bot, Message
-
+import datetime
 bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb3d9df4915f2bcc1c4fd341")
 bot.labeler.vbml_ignore_case = True
 
@@ -98,6 +98,11 @@ async def hi_handler(message: Message):
 async def hi_handler(message: Message):
     await message.answer('Ты бот')
 
+@bot.on.message(text="Расписание")
+async def hi_handler(message: Message):
+    i = datetime.datetime.today().isoweekday()
+    if (i == 1):
+        await message.answer(f"Вторник")
 
 # @bot.on.private_message(text="Соси")
 # async def hi_handler(message: Message):
