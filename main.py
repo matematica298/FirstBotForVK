@@ -1,7 +1,7 @@
 from vkbottle import Keyboard, Text
 from vkbottle.bot import Bot, Message
 import datetime
-bot = Bot(token="042069c40f987a3c04a68c1524d19484d56d9089f8ca2dfd84bbd93e05d50cb3d9df4915f2bcc1c4fd341")
+bot = Bot(token="d11781531f814f9dd13d2fb49ee027c9f7179fceead6474a787adbe7a25d3ddd6bb952077097f7a7037cf")
 bot.labeler.vbml_ignore_case = True
 
 
