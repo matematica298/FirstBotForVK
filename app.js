@@ -1,7 +1,7 @@
 console.log('')
 console.log('-------------------------------')
 console.log('  Скрипт Bot Gorilla запущен.')
-console.log('  Разработчик: Алексей Мирный')
+console.log('  Разработчик: Аfлексей Мирный')
 console.log('  vk.com/riconc')
 
 console.log('-------------------------------')
