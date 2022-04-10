@@ -12,7 +12,7 @@ console.log('')
 const { VK } = require('vk-io');
 
 const vk = new VK({
-	token: '73fa6fc21170aa0bbb454dc0ad8474ad025d66555eb2f9b69fc12f869c122619be636facf2920f0d8036b'
+	token: 'd11781531f814f9dd13d2fb49ee027c9f7179fceead6474a787adbe7a25d3ddd6bb952077097f7a7037cf'
 });
 const commands = [];
 const request = require('prequest');
